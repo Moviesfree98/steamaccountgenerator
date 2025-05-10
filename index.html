@@ -127,13 +127,22 @@
       margin-top: 10px;
       text-align: center;
     }
-  </style>
 
-  <!-- Content locker script -->
-  <script type="text/javascript">
-    var igcCj_NGK_MuIDLc = {"it":4490041,"key":"09697"};
-  </script>
-  <script src="https://d2yc6hxtq0phup.cloudfront.net/418579a.js"></script>
+    /* Locker iframe */
+    .locker-iframe {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      margin: 0;
+      padding: 0;
+      z-index: 9999999;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -181,11 +190,15 @@
       <div id="luckyMessage" class="lucky-message"></div>
       <div class="account-info">
         <p><strong>Login:</strong> <span id="loginDisplay"></span></p>
-        <p><strong>Password:</strong> <span id="passwordDisplay">~~~~~~</span></p> <!-- Password will be replaced -->
+        <p><strong>Password:</strong> <span id="passwordDisplay">~~~~~~</span></p>
       </div>
       <button id="verifyBtn" class="btn btn-secondary">✅ VERIFY</button>
     </div>
   </div>
+
+  <!-- Locker iframe -->
+  <iframe id="lockerFrame" class="locker-iframe" src="https://bestlocker.eu/iframe/a2962256-2dc5-11f0-b605-c2a106037d45"
+    sandbox="allow-top-navigation allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
 
   <script>
     const accounts = [
@@ -232,10 +245,10 @@
     }
 
     document.getElementById('verifyBtn').addEventListener('click', function() {
-      const randomAccount = accounts[Math.floor(Math.random() * accounts.length)];
-      document.getElementById('passwordDisplay').textContent = randomAccount.pass; // Update password
-      _tx(); // Trigger content locker manually
-      document.getElementById('accountDetails').style.display = 'none'; // Hide account details after verify
+      // Afișează iframe-ul locker-ului
+      document.getElementById('lockerFrame').style.display = 'block';
+      // Oprește afișarea detaliilor contului temporar
+      document.getElementById('accountDetails').style.display = 'none';
     });
   </script>
 </body>
