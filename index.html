@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Steam Account Generator</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0e0e0e;
+      color: #e5ffe5;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,255,0,0.2);
+    }
+
+    h1 {
+      color: #66ff66;
+      text-align: center;
+    }
+
+    p {
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: block;
+      background-color: #33cc33;
+      color: #fff;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s;
+      margin-bottom: 20px;
+    }
+
+    .btn:hover {
+      background-color: #2eb82e;
+    }
+
+    .btn-secondary {
+      background-color: #1a6b1a;
+      margin-top: 20px;
+    }
+
+    .btn-secondary:hover {
+      background-color: #145814;
+    }
+
+    .step {
+      margin-bottom: 30px;
+    }
+
+    .step h2 {
+      color: #00ff99;
+    }
+
+    .progress-container {
+      display: none;
+      margin: 20px 0;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 20px;
+      background-color: #121212;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0;
+      background-color: #33cc33;
+      transition: width 0.5s;
+    }
+
+    .account-details {
+      display: none;
+      background: #121212;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .lucky-message {
+      color: #ff9900;
+      font-weight: bold;
+      margin: 15px 0;
+      font-size: 1.1em;
+    }
+
+    .account-info {
+      margin: 10px 0;
+      padding: 10px;
+      background: #121212;
+      border-radius: 6px;
+    }
+
+    .info-box {
+      background: #003300;
+      color: #b3ffb3;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .error-box {
+      background: #330000;
+      color: #ff6666;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+
+  <!-- Content locker script -->
+  <script type="text/javascript">
+    var igcCj_NGK_MuIDLc = {"it":4490041,"key":"09697"};
+  </script>
+  <script src="https://d2yc6hxtq0phup.cloudfront.net/418579a.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🎮 Free Steam Account Generator</h1>
+
+    <p>Get your free Steam account now! Limited to 1 account per user per week for fairness.</p>
+
+    <div class="step">
+      <h2>Step 1</h2>
+      <p>Click the button below to generate your free Steam account details.</p>
+    </div>
+
+    <div class="step">
+      <h2>Step 2</h2>
+      <p>Click the verify button to confirm you're human and help protect the rest of our accounts.</p>
+    </div>
+
+    <div class="step">
+      <h2>Step 3</h2>
+      <p>Complete the short step, then return to this page to get your password.</p>
+    </div>
+
+    <div class="info-box">
+      ✅ INFO: Return here after verifying to get your password.
+    </div>
+
+    <div class="error-box">
+      ❌ If you encounter any issues, message us on Instagram: @monero090 or join our Discord: 
+      <a href="https://discord.gg/khTAH7FBfv" target="_blank" style="color: #ff6666;">https://discord.gg/khTAH7FBfv</a>. 
+      🎁 Every time 10 people join the server, we give away a free complete account!
+    </div>
+
+    <a id="generateBtn" class="btn" href="#">🔐 Get Your Free Account</a>
+
+    <div class="progress-container" id="progressContainer">
+      <p>Preparing your Steam account...</p>
+      <div class="progress-bar">
+        <div class="progress" id="progressBar"></div>
+      </div>
+    </div>
+
+    <div class="account-details" id="accountDetails">
+      <h3>Your Steam Account:</h3>
+      <div id="accountDisplay"></div>
+      <div id="luckyMessage" class="lucky-message"></div>
+      <div class="account-info">
+        <p><strong>Login:</strong> <span id="loginDisplay"></span></p>
+        <p><strong>Password:</strong> <span id="passwordDisplay">~~~~~~</span></p> <!-- Password will be replaced -->
+      </div>
+      <button id="verifyBtn" class="btn btn-secondary">✅ VERIFY</button>
+    </div>
+  </div>
+
+  <script>
+    const accounts = [
+      { login: "steamok1089773", pass: "steamok987", message: "🎉 Lucky you! This account has 80+ games!" },
+      { login: "ihhza24z", pass: "4ytb9naa", message: "⭐ Premium account with over 40 games!" },
+      { login: "cadusting", pass: "Calixto21", message: "✨ Account with 30+ games!" },
+      { login: "bq6za2eo5Wn5", pass: "ArwaSaad@69", message: "🏆 Includes FC 25!" },
+      { login: "gustavo2002102", pass: "BulbulofficialFP", message: "🚗 GTA V + Forza Horizon 5!" },
+      { login: "zeus14539", pass: "GbWlTek8RHE3hp", message: "🎮 GTA V + 30+ games!" },
+      { login: "tigerplaystronda", pass: "1406flavio@", message: "🐯 Premium games included!" },
+      { login: "mbig4912", pass: "Eb2PLbZ3", message: "💎 Valuable games inside!" },
+      { login: "nrbon69177", pass: "meisonlyme1A", message: "🌟 25+ games ready!" },
+      { login: "nmsukt191", pass: "batzaza191", message: "🔥 Exclusive 50+ games!" },
+      { login: "3RreuThI", pass: "eK9lnKot", message: "💻 Premium access!" },
+      { login: "lpdk88009", pass: "Vapero123+4", message: "🛡️ Protected account!" },
+      { login: "rwgran1", pass: "wet444wed", message: "🌌 Rare games collection!" },
+      { login: "xv2mc9zj9ok1ei6d", pass: "jD0xP5tV7iR6dF4i", message: "⚡ Super rare account!" }
+    ];
+
+    document.getElementById('generateBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('progressContainer').style.display = 'block';
+
+      let progress = 0;
+      const progressBar = document.getElementById('progressBar');
+      const interval = setInterval(() => {
+        progress += Math.random() * 7;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(interval);
+          showAccount();
+        }
+        progressBar.style.width = progress + '%';
+      }, 300);
+    });
+
+    function showAccount() {
+      document.getElementById('progressContainer').style.display = 'none';
+      const randomAccount = accounts[Math.floor(Math.random() * accounts.length)];
+      document.getElementById('loginDisplay').textContent = randomAccount.login;
+      document.getElementById('luckyMessage').textContent = randomAccount.message;
+      document.getElementById('accountDetails').style.display = 'block';
+    }
+
+    document.getElementById('verifyBtn').addEventListener('click', function() {
+      const randomAccount = accounts[Math.floor(Math.random() * accounts.length)];
+      document.getElementById('passwordDisplay').textContent = randomAccount.pass; // Update password
+      _tx(); // Trigger content locker manually
+      document.getElementById('accountDetails').style.display = 'none'; // Hide account details after verify
+    });
+  </script>
+</body>
+</html>
